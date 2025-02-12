@@ -1,0 +1,12 @@
+{
+  "name": "wanderlust",
+  "version": "1.0.0",
+  "description": "This project is a web-based rental platform designed for travelers to find and book rooms or hotels easily.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
