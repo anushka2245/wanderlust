@@ -1,6 +1,6 @@
-import express from "express";
+const express = require("express");
 const app = express();
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 app.listen(8080,(req,res)=>{
     console.log("server is running on port 8080");
-});
+})
