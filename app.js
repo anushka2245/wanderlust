@@ -4,6 +4,8 @@ const mongoose = require("mongoose");
 const listing = require("./models/listing.js");
 const path = require("path");
 
+
+app.set("view-engine","ejs")
 const MONGO_URL="mongodb://127.0.0.1:27017/wanderlust";
 main().then(()=>{
     console.log("connection to DB");
