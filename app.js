@@ -24,7 +24,9 @@ app.get("/testlisting",async (req,res)=>{
         description:"its a beautiful villa",
         price:1000,
         location:"bangalore",
-        image:"https://d3oo9u3p09egds.cloudfront.net/filters:format(webp)/rental_property/colina-villa-h/01_Facade__10_.jpeg",
+        image:{
+            url:"https://d3oo9u3p09egds.cloudfront.net/filters:format(webp)/rental_property/colina-villa-h/01_Facade__10_.jpeg"
+        },
         country:"India"
     }
 );
