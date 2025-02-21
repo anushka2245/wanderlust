@@ -5,12 +5,15 @@ const listing = require("./models/listing.js");
 const path = require("path");
 const Listing = require("./models/listing.js");
 const methodOverride = require("method-override");
+const ejsmate = require("ejs-mate");
 
 
 app.set("view engine","ejs");
 app.set("views",path.join(__dirname,"views"));
 app.use(express.urlencoded({extended:true}));
 app.use(methodOverride("_method"));
+app.engine("ejs",ejsmate);
+
 const MONGO_URL="mongodb://127.0.0.1:27017/wanderlust";
 main().then(()=>{
     console.log("connection to DB");
