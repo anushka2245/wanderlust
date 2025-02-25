@@ -11,6 +11,7 @@ app.set("views", path.join(__dirname, "views"));
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 app.engine("ejs", ejsmate);
+app.use(express.static(path.join(__dirname,"/public")));
 
 const MONGO_URL = "mongodb://127.0.0.1:27017/wanderlust";
 main()
@@ -91,6 +92,6 @@ app.delete("/listings/:id", async (req, res) => {
 //   res.send("Listing saved successfully");
 // });
 
-app.listen(8080, () => {
+app.listen(8081, () => {
   console.log("Server is running on port 8080");
 });
