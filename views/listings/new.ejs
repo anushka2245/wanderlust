@@ -1,50 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>wanderlust</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
+<% layout('layouts/boilerplate') %>
 <body>
-    <div class="container mt-5">
-        <h2 class="mb-4">Add New Listing</h2>
+    <div class="row">
+        <div class="col-8 offset-2">
+        <h3>Create a NewListing</h3>
         <form action="/listings" method="post">
             <div class="mb-3">
                 <label for="title" class="form-label">Title</label>
-                <input type="text" class="form-control" name="listing[title]" placeholder="Enter title">
+                <input type="text" class="form-control" name="listing[title]" placeholder="Add a catchy title">
             </div>
-
             <div class="mb-3">
                 <label for="description" class="form-label">Description</label>
                 <textarea class="form-control" name="listing[description]" rows="4" placeholder="Enter description"></textarea>
             </div>
-
             <div class="mb-3">
-                <label for="image" class="form-label">Image</label>
-                <input type="text" class="form-control" name="listing[image]">
+                <label for="image" class="form-label">ImageLink</label>
+                <input type="text" class="form-control" name="listing[image]" placeholder="Enter image URL/link">
             </div>
-
-            <div class="mb-3">
-                <label for="price" class="form-label">Price</label>
-                <input type="text" class="form-control" name="listing[price]" placeholder="Enter price">
+            <div class="row">
+                <div class="mb-3 col-md-4">
+                    <label for="price" class="form-label">Price</label>
+                    <input type="text" class="form-control" name="listing[price]" placeholder="Enter price">
+                </div>
+                <div class="mb-3 col-md-8">
+                    <label for="country" class="form-label">Country</label>
+                    <input type="text" class="form-control" name="listing[country]" placeholder="Enter country">
+                </div>
             </div>
-            <div class="mb-3">
-                <label for="country" class="form-label">Country</label>
-                <input type="text" class="form-control" name="listing[country]" placeholder="Enter country">
-            </div>
-
             <div class="mb-3">
                 <label for="location" class="form-label">Location</label>
                 <input type="text" class="form-control" name="listing[location]" placeholder="Enter location">
             </div>
-
-         
-
-            <button type="submit" class="btn btn-primary">Add Item</button>
+            <button type="submit" class="add-btn btn-dark">Add</button>
         </form>
+        </div>
     </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-</html>
+
