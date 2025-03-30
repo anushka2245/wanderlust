@@ -7,10 +7,16 @@
             <div class="mb-3">
                 <label for="title" class="form-label">Title</label>
                 <input type="text" class="form-control" name="listing[title]" placeholder="Add a catchy title" required>
+                <div class="valid-feedback">
+                    Title Looks good!
+                </div>
             </div>
             <div class="mb-3">
                 <label for="description" class="form-label">Description</label>
                 <textarea class="form-control" name="listing[description]" rows="4" placeholder="Enter description" required></textarea>
+                <div class="invalid-feedback">
+                    Please enter a short description.
+                </div>
             </div>
             <div class="mb-3">
                 <label for="image" class="form-label">ImageLink</label>
@@ -20,15 +26,24 @@
                 <div class="mb-3 col-md-4">
                     <label for="price" class="form-label">Price</label>
                     <input type="text" class="form-control" name="listing[price]" placeholder="Enter price" required>
+                    <div class="invalid-feedback">
+                        Please enter a valid Price.
+                    </div>
                 </div>
                 <div class="mb-3 col-md-8">
                     <label for="country" class="form-label">Country</label>
                     <input type="text" class="form-control" name="listing[country]" placeholder="Enter country" required>
+                    <div class="invalid-feedback">
+                        Country Name should be valid.
+                    </div>
                 </div>
             </div>
             <div class="mb-3">
                 <label for="location" class="form-label">Location</label>
                 <input type="text" class="form-control" name="listing[location]" placeholder="Enter location" required>
+                <div class="invalid-feedback">
+                    Location should be valid.
+                </div>
             </div>
             <button type="submit" class="add-btn btn-dark">Add</button>
         </form>
