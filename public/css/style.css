@@ -92,6 +92,7 @@ body{
     padding: 7px;
     border-radius: 12px;
 }
+    
 /*edit page*/
 .edit-btn{
     background-color: #fe424d !important;
@@ -100,8 +101,8 @@ body{
     padding: 7px;
     border-radius: 12px;
 }
-/*show page*/
 
+/*show page*/
 .show-img {
     width: 100%;
     height: 30vh; 
