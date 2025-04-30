@@ -58,9 +58,21 @@ app.get("/listings/:id", wrapAsync(async (req, res) => {
 // Create route
 app.post("/listings", wrapAsync(async (req, res, next) => {
   if (!req.body.listing) {
-    throw new ExpressError(400, "Invalid data sent for listing!");
+    throw new ExpressError(400, "Send valid data for listing!");
   }
+
   let newListing = new Listing(req.body.listing);
+
+  if (!newListing.title) {
+    throw new ExpressError(400, "Title is missing!");
+  }
+  if (!newListing.description) {
+    throw new ExpressError(400, "Description is missing!");
+  }
+  if (!newListing.location) {
+    throw new ExpressError(400, "Location is missing!");
+  }
+
   await newListing.save();
   res.redirect("/listings");
 }));
@@ -95,17 +107,15 @@ app.delete("/listings/:id", wrapAsync(async (req, res) => {
 
 // Catch-all route for invalid URLs
 app.all("*", (req, res, next) => {
-  next(new ExpressError("Page not found!"));  // Use integer status code
+  next(new ExpressError(404, "Page not found!"));
 });
 
 // Error-handling middleware
 app.use((err, req, res, next) => {
   const { statusCode = 500, message = "Something went wrong!" } = err;
-  res.status(statusCode).render("error.ejs",{message});
-  //res.status(status).send(message);
+  res.status(statusCode).render("error.ejs", { message, statusCode });
 });
 
-// Server listener
 const PORT = 8081;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);

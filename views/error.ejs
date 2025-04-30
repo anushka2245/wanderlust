@@ -1,8 +1,13 @@
 <% layout('layouts/boilerplate') %>
 
-<div class="row mt-3">
-    <div class="alert alert-danger col-6 offset-3" role="alert">
-        <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
-       <h4 class="alert-heading"><%= message %></h4>
+<div class="row mt-5 justify-content-center">
+    <div class="alert alert-danger col-md-6 text-center" role="alert">
+        <svg class="bi flex-shrink-0 me-2" width="32" height="32" role="img" aria-label="Danger:">
+            <use xlink:href="#exclamation-triangle-fill"/>
+        </svg>
+        <h4 class="alert-heading">Error <%= statusCode || 500 %></h4>
+        <p><%= message || "Something went wrong!" %></p>
+        <hr>
+        <a href="/" class="btn btn-outline-light mt-2">Back to Home</a>
     </div>
 </div>
